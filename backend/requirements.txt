@@ -1,0 +1,22 @@
+# ===== Web 框架 =====
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+
+# ===== ORM / 数据库（SQLite MVP，可无缝切本地 MySQL/MariaDB） =====
+sqlalchemy[asyncio]>=2.0.30
+aiosqlite>=0.20.0
+
+# ===== 配置与校验 =====
+pydantic>=2.7.0
+PyYAML>=6.0.1
+
+# ===== HTTP / SQL 解析 =====
+httpx>=0.27.0
+sqlglot>=25.5.0
+
+# ===== 调度与采集（采集器作为后端进程内任务） =====
+APScheduler>=3.10.4
+
+# ===== 集群对接（Hive / HMS） =====
+pyhive>=0.7.0
+pymysql>=1.1.1

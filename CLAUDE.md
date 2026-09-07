@@ -131,8 +131,9 @@ plan → tdd → implement → code-review → testing → verify
 
 ## 9. 当前开发阶段
 
-仓库骨架阶段。里程碑见 `docs/架构设计方案.md` 第 9 章（Phase 0~6，勿与参考文档 4.2.3 的"Phase 1~7"编号混用）：
+里程碑见 `docs/架构设计方案.md` 第 9 章（Phase 0~6，勿与参考文档 4.2.3 的"Phase 1~7"编号混用）：
 
-- Phase 0 环境探测：待执行（`docs/环境探测结果.md` 为结果模板）
-- Phase 1 平台骨架：待启动
+- Phase 0 环境探测：✅ 完成（`docs/环境探测结果.md`，commit e9e9a11）
+- Phase 1 平台骨架：✅ 完成（FastAPI 工程 + SQLite 23 张表 + config.yaml + start/stop 脚本 + 前端 SPA 骨架）
+- Phase 2 数据资产管理：待启动
 - 详细计划随进展更新到 `docs/`，不散落在对话里

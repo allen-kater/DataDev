@@ -47,3 +47,6 @@ refrence/
 *.jar
 *.war
 *.ear
+
+# 前端生产构建产物（由 vite build 生成，FastAPI 运行时托管）
+backend/app/static/
