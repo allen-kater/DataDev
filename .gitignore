@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+dist/
+*.local
+
+# 运行期数据与日志（不入库）
+logs/*.log
+logs/*.err.log
+data/*.db
+data/*.db-journal
+data/*.db-wal
+data/*.db-shm
+data/run/
+data/results/*
+!data/results/.gitkeep
+data/uploads/*
+!data/uploads/.gitkeep
+
+# 本地配置与密钥（不入库）
+backend/config.yaml
+.env
+*.env
+
+# 第三方课程参考资料（设计输入，不入库；如需纳入可删除此行）
+refrence/
