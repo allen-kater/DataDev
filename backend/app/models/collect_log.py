@@ -3,7 +3,7 @@
 from datetime import datetime
 from typing import Optional
 
-from sqlalchemy import BigInteger, DateTime, ForeignKey, Integer, String, Text
+from sqlalchemy import DateTime, ForeignKey, Integer, String, Text
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.models.base import Base
@@ -12,7 +12,7 @@ from app.models.base import Base
 class CollectLog(Base):
     __tablename__ = "collect_log"
 
-    id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
+    id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     task_id: Mapped[int] = mapped_column(ForeignKey("collect_task.id"), nullable=False)
     start_at: Mapped[Optional[datetime]] = mapped_column(DateTime)
     end_at: Mapped[Optional[datetime]] = mapped_column(DateTime)

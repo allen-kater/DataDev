@@ -12,7 +12,7 @@ from app.models.base import Base
 class TableUsage(Base):
     __tablename__ = "table_usage"
 
-    id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
+    id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     table_id: Mapped[int] = mapped_column(
         ForeignKey("table_meta.id"), index=True, nullable=False
     )

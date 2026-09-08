@@ -5,6 +5,7 @@
 """
 
 import os
+from datetime import datetime, timedelta, timezone
 from functools import lru_cache
 from pathlib import Path
 
@@ -13,9 +14,24 @@ from pydantic import BaseModel
 
 BACKEND_DIR = Path(__file__).resolve().parents[2]
 PROJECT_DIR = BACKEND_DIR.parent
+DATA_DIR = PROJECT_DIR / "data"
 CONFIG_PATH = BACKEND_DIR / "config.yaml"
 
 DEFAULT_DB_URL = f"sqlite+aiosqlite:///{(PROJECT_DIR / 'data' / 'dataflow.db').as_posix()}"
+
+_SHANGHAI = timezone(timedelta(hours=8))
+
+
+def utcnow() -> datetime:
+    """当前 UTC 时间（rules/14：存储/比较统一 UTC）。"""
+    return datetime.now(timezone.utc)
+
+
+def to_shanghai(dt: datetime) -> datetime:
+    """任意 aware/naive datetime 转 +08:00；naive 视为 UTC。"""
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+    return dt.astimezone(_SHANGHAI)
 
 
 class DatabaseConfig(BaseModel):

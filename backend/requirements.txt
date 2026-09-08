@@ -14,9 +14,19 @@ PyYAML>=6.0.1
 httpx>=0.27.0
 sqlglot>=25.5.0
 
+# ===== 安全（datasource 密码字段 AES 加密，见 rules/10） =====
+cryptography>=42.0.0
+
 # ===== 调度与采集（采集器作为后端进程内任务） =====
 APScheduler>=3.10.4
 
 # ===== 集群对接（Hive / HMS） =====
 pyhive>=0.7.0
 pymysql>=1.1.1
+thrift>=0.16.0
+thrift_sasl>=0.4.3
+pure-sasl>=0.6.2
+
+# ===== 测试 =====
+pytest>=8.0.0
+pytest-asyncio>=0.23.0

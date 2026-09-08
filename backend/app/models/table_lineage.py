@@ -2,7 +2,7 @@
 
 from typing import Optional
 
-from sqlalchemy import BigInteger, ForeignKey, String, Text
+from sqlalchemy import ForeignKey, String, Text
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.models.base import Base, TimestampMixin
@@ -11,7 +11,7 @@ from app.models.base import Base, TimestampMixin
 class TableLineage(Base, TimestampMixin):
     __tablename__ = "table_lineage"
 
-    id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
+    id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     upstream_table_id: Mapped[int] = mapped_column(
         ForeignKey("table_meta.id"), index=True, nullable=False
     )

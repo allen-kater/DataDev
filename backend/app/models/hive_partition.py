@@ -12,7 +12,7 @@ from app.models.base import Base, TimestampMixin
 class HivePartition(Base, TimestampMixin):
     __tablename__ = "hive_partition"
 
-    id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
+    id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     table_id: Mapped[int] = mapped_column(
         ForeignKey("table_meta.id"), index=True, nullable=False
     )
